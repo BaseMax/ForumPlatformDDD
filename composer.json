@@ -1,0 +1,16 @@
+{
+    "name": "max/forum-platform-ddd",
+    "license": "GNU",
+    "autoload": {
+        "psr-4": {
+            "ForumPlatform\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ali Ahmadi",
+            "email": "aliahmadi.github@gmail.com"
+        }
+    ],
+    "require": {}
+}
