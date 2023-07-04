@@ -1,22 +1,18 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 require_once dirname(__DIR__) . "/vendor/autoload.php";
 
 
-
-
+// request received
 $request = Framework\Http\Request::createFromGlobals();
 
-
-// request received
+$kernel = new Framework\Http\Kernel();
 
 // perform some logic
+$response = $kernel->handle($request);
+
 
 // send response (string of content)
-
-$content = "<h1>hello world</h1>";
-
-$response = new Framework\Http\Response(content: $content, status: 200, headers: []);
-
-
 $response->send();
