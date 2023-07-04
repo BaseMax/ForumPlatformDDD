@@ -2,7 +2,11 @@
 
 require_once dirname(__DIR__) . "/vendor/autoload.php";
 
-dd("here");
+
+
+
+$request = Framework\Http\Request::createFromGlobals();
+
 
 // request received
 
@@ -10,4 +14,9 @@ dd("here");
 
 // send response (string of content)
 
-echo "hello world";
+$content = "<h1>hello world</h1>";
+
+$response = new Framework\Http\Response(content: $content, status: 200, headers: []);
+
+
+$response->send();
