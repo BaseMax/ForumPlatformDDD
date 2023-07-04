@@ -1,9 +1,9 @@
 {
     "name": "max/forum-platform-ddd",
-    "license": "GNU",
     "autoload": {
         "psr-4": {
-            "ForumPlatform\\": "src/"
+            "App\\": "src/",
+            "framework\\": "framework/" 
         }
     },
     "authors": [
@@ -12,5 +12,7 @@
             "email": "aliahmadi.github@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "symfony/var-dumper": "^6.3"
+    }
 }
