@@ -22,7 +22,7 @@ class UserRepository extends Repository
         );
     }
 
-    public function add(User $user)
+    public function add(User $user): int
     {
         $this->db->beginTransaction();
 
@@ -45,5 +45,7 @@ class UserRepository extends Repository
 
             throw new Exception($e->getMessage());
         }
+
+        return $this->db->lastInsertId();
     }
 }

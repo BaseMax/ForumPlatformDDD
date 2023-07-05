@@ -7,10 +7,12 @@ use App\Repositories\UserRepository;
 
 class UserService extends Service
 {
-    public function createUser(string $name, string $email, string $password)
+    public function createUser(string $name, string $email, string $password): int
     {
         $user = User::createNewUser($name, $email, $password);
 
-        (new UserRepository())->add($user);
+        $userId = (new UserRepository())->add($user);
+
+        return $userId;
     }
 }

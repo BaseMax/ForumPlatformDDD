@@ -10,12 +10,5 @@ class HomeController extends Controller
 {
     public function index(Request $request): Response
     {
-        (new UserService())->createUser("Ali", "ali@gmail.com", "1234");
-
-        
-
-        return new Response([
-            "status" => "ok"
-        ]);
     }
 }
