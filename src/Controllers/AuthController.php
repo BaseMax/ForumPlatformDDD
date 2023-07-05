@@ -1,19 +1,21 @@
 <?php
 
 namespace App\Controllers;
+
+use Framework\Http\Request;
 use Framework\Http\Response;
 
 class AuthController extends Controller
 {
-    public static function register(){
-        return new Response("hello from controller register");
+    public function register(Request $request): Response
+    {
     }
 
-    public static function login(){
-
+    public function login(Request $request): Response
+    {
     }
 
-    public static function logout(){
-        
+    public function logout(Request $request): Response
+    {
     }
 }

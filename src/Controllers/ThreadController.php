@@ -2,29 +2,32 @@
 
 namespace App\Controllers;
 
+use Framework\Http\Request;
+use Framework\Http\Response;
+
 class ThreadController extends Controller
 {
-    public static function index()
+    public function index(Request $request): Response
     {
 
     }
 
-    public static function show()
+    public function show(Request $request, int $id): Response
     {
 
     }
 
-    public static function store()
+    public function store(Request $request): Response
     {
 
     }
 
-    public static function update()
+    public function update(Request $request, int $id): Response
     {
 
     }
 
-    public static function destroy()
+    public function destroy(Request $request, int $id): Response
     {
         
     }

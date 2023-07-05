@@ -5,16 +5,16 @@ namespace Framework\Http;
 class Response
 {
     public function __construct(
-        private ?string $content = "",
+        private mixed $content = "",
         private int $status = 200,
         private array $headers = []
     )
     {
-
+        header('Content-Type: application/json; charset=utf-8');
     }
 
     public function send(): void
     {
-        echo $this->content;
+        echo json_encode($this->content);
     }
 }
