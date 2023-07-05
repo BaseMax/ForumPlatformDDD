@@ -55,4 +55,34 @@ class ThreadRepository extends Repository
 
         return $this->db->lastInsertId();
     }
+
+    public function update(int $id, array $values): void
+    {
+        $this->db->beginTransaction();
+
+        $stmt = $this->db->prepare(
+            "UPDATE threads SET user_id = ?, title = ?, body = ?, upvotes = ?, downvotes = ?, created_at = ?, updated_at = ?"
+        );
+
+        $stmt->execute(
+            $values["user_id"],
+            $values["title"],
+            $values["body"],
+            $values["upvotes"],
+            $values["downvotes"],
+            $values["created_at"],
+            $values["updated_at"]
+        );
+
+        $this->db->commit();
+    }
+
+    public function delete(int $id): void
+    {
+        $stmt = $this->db->prepare(
+            "DELETE FROM threads WHERE id = ?"
+        );
+
+        $stmt->execute([$id]);
+    }
 }

@@ -25,4 +25,16 @@ class ThreadService extends Service
 
         return $threadId;
     }
+
+    public function update(int $id, array $values): array
+    {
+        (new ThreadRepository())->update($id, $values);
+
+        return $this->get($id);
+    }
+
+    public function delete(int $id): void
+    {
+        (new ThreadRepository())->delete($id);
+    }
 }

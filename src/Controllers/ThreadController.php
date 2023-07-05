@@ -25,7 +25,6 @@ class ThreadController extends Controller
     public function store(Request $request): Response
     {
         $user_id = $request->postParams["user_id"];
-        // int $user_id, string $title, string $body, int $upvotes, int $downvotes
         $title = $request->postParams["title"];
         $body = $request->postParams["body"];
         $upvotes = $request->postParams["upvotes"];
@@ -41,9 +40,18 @@ class ThreadController extends Controller
 
     public function update(Request $request, int $id): Response
     {
+        (new ThreadService())->update($id, $request->postParams);
+        return new Response([
+            "status" => "ok"
+        ]);
     }
 
     public function destroy(Request $request, int $id): Response
     {
+        (new ThreadService())->delete($id);
+
+        return new Response([
+            "status" => "ok"
+        ]);
     }
 }
