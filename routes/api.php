@@ -1,4 +1,4 @@
-<?php
+<?php if (!LOADED) exit;
 
 use App\Controllers\AuthController;
 use App\Controllers\HomeController;
@@ -7,42 +7,59 @@ use App\Controllers\ReplyController;
 use App\Controllers\SearchController;
 use App\Controllers\ThreadController;
 
-if (!LOADED) exit;
 
 return [
-    ["GET", "/", [HomeController::class, "index"]], // Home Page
+    // Home Page
+    ["GET", "/api", [HomeController::class, "index"]],
 
-    ["POST", "/api/register", [AuthController::class, "register"]], // Register a new user
+    // Register a new user
+    ["POST", "/api/register", [AuthController::class, "register"]],
 
-    ["POST", "/api/login", [AuthController::class, "login"]], // Login a user
+    // Login a user
+    ["POST", "/api/login", [AuthController::class, "login"]],
 
-    ["POST", "/api/logout", [AuthController::class, "logout"]], // Logout a user
+    // Logout a user
+    ["POST", "/api/logout", [AuthController::class, "logout"]],
 
-    ["GET", "/api/threads", [ThreadController::class, "index"]], // Get a list of all threads
+    // Get a list of all threads
+    ["GET", "/api/threads", [ThreadController::class, "index"]],
 
-    ["GET", "/api/threads/{id:\d+}", [ThreadController::class, "show"]], // Get a specific thread by ID
+    // Get a specific thread by ID
+    ["GET", "/api/threads/{id:\d+}", [ThreadController::class, "show"]],
 
-    ["POST", "/api/threads", [ThreadController::class, "store"]], // Create a new thread
+    // Create a new thread
+    ["POST", "/api/threads", [ThreadController::class, "store"]],
 
-    ["PUT", "/api/threads/{id:\d+}", [ThreadController::class, "update"]], // Update an existing thread
+    // Update an existing thread
+    ["PUT", "/api/threads/{id:\d+}", [ThreadController::class, "update"]],
 
-    ["DELETE", "/api/threads/{id:\d+}", [ThreadController::class, "destroy"]], // Delete an existing thread
+    // Delete an existing thread
+    ["DELETE", "/api/threads/{id:\d+}", [ThreadController::class, "destroy"]],
 
-    ["GET", "/api/threads/{thread_id:\d+}/replies", [ReplyController::class, "index"]], // Get a list of all replies for a specific thread
+    // Get a list of all replies for a specific thread
+    ["GET", "/api/threads/{thread_id:\d+}/replies", [ReplyController::class, "index"]],
 
-    ["GET", "/api/threads/{thread_id:\d+}/replies/{id:\d+}", [ReplyController::class, "show"]], // Get a specific reply by ID for a specific thread
+    // Get a specific reply by ID for a specific thread
+    ["GET", "/api/threads/{thread_id:\d+}/replies/{id:\d+}", [ReplyController::class, "show"]],
 
-    ["POST", "/api/threads/{thread_id:\d+}/replies", [ReplyController::class, "store"]], // Create a new reply for a specific thread
+    // Create a new reply for a specific thread
+    ["POST", "/api/threads/{thread_id:\d+}/replies", [ReplyController::class, "store"]],
 
-    ["PUT", "/api/threads/{thread_id:\d+}/replies/{id:\d+}", [ReplyController::class, "update"]], // Update an existing reply for a specific thread
+    // Update an existing reply for a specific thread
+    ["PUT", "/api/threads/{thread_id:\d+}/replies/{id:\d+}", [ReplyController::class, "update"]],
 
-    ["DELETE", "/api/threads/{thread_id:\d+}/replies/{id:\d+}", [ReplyController::class, "destroy"]], // Delete an existing reply for a specific thread
+    // Delete an existing reply for a specific thread
+    ["DELETE", "/api/threads/{thread_id:\d+}/replies/{id:\d+}", [ReplyController::class, "destroy"]],
 
-    ["GET", "/api/moderators", [ModerationController::class, "index"]], // Get a list of all moderators
+    // Get a list of all moderators
+    ["GET", "/api/moderators", [ModerationController::class, "index"]],
 
-    ["POST", "/api/moderators", [ModerationController::class, "store"]], // Add a new moderator
+    // Add a new moderator
+    ["POST", "/api/moderators", [ModerationController::class, "store"]],
 
-    ["DELETE", "/api/moderators/{user_id:\d+}", [ModerationController::class, "destroy"]], // Remove an existing moderator
+    // Remove an existing moderator
+    ["DELETE", "/api/moderators/{user_id:\d+}", [ModerationController::class, "destroy"]],
 
-    ["GET", "/api/search", [SearchController::class, "search"]] // Search for threads and replies by keyword
+    // Search for threads and replies by keyword
+    ["GET", "/api/search", [SearchController::class, "search"]]
 ];
