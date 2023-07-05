@@ -34,7 +34,7 @@ class ReplyRepository extends Repository
     public function add(Reply $reply): int
     {
         $stmt = $this->db->prepare(
-            "INSERT INTO replies (`user_id`, `thread_id`, `body`, `upvotes`, `downvotes`, `created_at`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?)"
+            "INSERT INTO replies SET (`user_id`, `thread_id`, `body`, `upvotes`, `downvotes`, `created_at`, `updated_at`) VALUES (?, ?, ?, ?, ?, ?, ?)"
         );
 
         $stmt->execute([

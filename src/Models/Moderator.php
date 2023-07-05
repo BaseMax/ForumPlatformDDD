@@ -8,7 +8,7 @@ class Moderator extends Model
     private int $created_at;
     private int $updated_at;
 
-    public function createNewModerate(int $user_id): static
+    public static function createNewModerate(int $user_id): static
     {
         return new static($user_id, time(), time());
     }
