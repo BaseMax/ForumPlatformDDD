@@ -92,7 +92,7 @@ Note: This is just an example schema, and you may need to modify it based on the
 
 ## Authors
 
-- ...
+- Ali AHmadi
 - Max Base
 
 Copyright 2023, Max Base
