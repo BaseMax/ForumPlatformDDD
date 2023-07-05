@@ -61,7 +61,7 @@ class ThreadRepository extends Repository
         $this->db->beginTransaction();
 
         $stmt = $this->db->prepare(
-            "UPDATE threads SET user_id = ?, title = ?, body = ?, upvotes = ?, downvotes = ?, created_at = ?, updated_at = ?"
+            "UPDATE threads SET user_id = ?, title = ?, body = ?, upvotes = ?, downvotes = ?, created_at = ?, updated_at = ? WHERE id = ?"
         );
 
         $stmt->execute(
@@ -71,7 +71,8 @@ class ThreadRepository extends Repository
             $values["upvotes"],
             $values["downvotes"],
             $values["created_at"],
-            $values["updated_at"]
+            $values["updated_at"],
+            $id
         );
 
         $this->db->commit();

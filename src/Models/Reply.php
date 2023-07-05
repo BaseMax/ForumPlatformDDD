@@ -14,7 +14,7 @@ class Reply extends Model
     private int $updated_at;
 
 
-    public function createNewReply(int $user_id, int $thread_id, string $body, int $upvotes, int $downvotes): self
+    public static function createNewReply(int $user_id, int $thread_id, string $body, int $upvotes, int $downvotes): self
     {
         return new static($user_id, $thread_id, $body, $upvotes, $downvotes, time(), time());
     }
