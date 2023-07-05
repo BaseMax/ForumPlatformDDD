@@ -10,5 +10,8 @@ class HomeController extends Controller
 {
     public function index(Request $request): Response
     {
+        return new Response([
+            "status" => "ok"
+        ]);
     }
 }

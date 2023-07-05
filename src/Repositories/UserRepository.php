@@ -9,17 +9,9 @@ use PDO;
 
 class UserRepository extends Repository
 {
-    private $db;
-
     public function __construct()
     {
-        $config = Config::getEnv();
-
-        $this->db = new PDO(
-            "mysql:host={$config['host']};dbname={$config['dbname']}",
-            $config["user"],
-            $config["password"]
-        );
+        parent::__construct();
     }
 
     public function add(User $user): int
