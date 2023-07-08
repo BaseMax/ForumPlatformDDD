@@ -90,6 +90,23 @@ Note: This is just an example list of API routes, and you may need to modify it 
 
 Note: This is just an example schema, and you may need to modify it based on the specific requirements.
 
+## Instalation
+
+```bash
+git clone https://github.com/BaseMax/ForumPlatformDDD.git
+```
+```bash
+cd ForumPlatformDDD
+```
+```bash
+docker build -t ddd_forum .
+```
+```bash
+docker run -p2929:2929 ddd_forum
+```
+
+[screen.webm](https://github.com/BaseMax/ForumPlatformDDD/assets/107758775/09aa9c03-2baa-4ba9-b8b2-10da1fd239fc)
+
 ## Authors
 
 - Ali AHmadi
