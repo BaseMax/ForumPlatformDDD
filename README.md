@@ -90,7 +90,7 @@ Note: This is just an example list of API routes, and you may need to modify it 
 
 Note: This is just an example schema, and you may need to modify it based on the specific requirements.
 
-## Instalation
+## Installation
 
 ```bash
 git clone https://github.com/BaseMax/ForumPlatformDDD.git
