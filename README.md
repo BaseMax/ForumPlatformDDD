@@ -109,7 +109,7 @@ docker run -p2929:2929 ddd_forum
 
 ## Authors
 
-- Ali AHmadi
+- Ali Ahmadi
 - Max Base
 
 Copyright 2023, Max Base
